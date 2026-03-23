@@ -14,7 +14,7 @@
             color: #333;
             /* Thay images/background.png bằng file ảnh nền trời/núi của con */
             background-color: #f0fdf4;
-            background-image: url('images/background.png');
+           
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center top;
@@ -35,6 +35,7 @@
         .header-img {
             width: 100%;
             max-width: 600px; /* Thay images/header_illustration.png bằng ảnh chai, cốc, pin */
+			background-image: url('images/banner.png');
         }
         .header-title {
             color: #2e7d32;
@@ -306,8 +307,7 @@
 <main class="page-container">
     <header class="page-header">
         <div class="header-content">
-            <img src="images/header_illustration.png" alt="Recycle Project Illustration" class="header-img">
-            <h1 class="header-title">Nhóm 3 Chiến Binh Xanh</h1>
+            <img src="images/banner.png" alt="Recycle Project Illustration" class="header-img">
             <p class="header-subtitle">Chúng em tái chế rác để bảo vệ môi trường</p>
             <div class="header-buttons">
                 <button class="btn btn-blue">Xem Dự Án</button>
@@ -320,17 +320,17 @@
         <h2 class="section-title"><img src="images/plant_icon.png" alt=""> Thành Viên Nhóm <img src="images/plant_icon.png" alt=""></h2>
         <div class="team-grid">
             <div class="team-member">
-                <img src="images/member_an.png" alt="An" class="member-photo">
+                <img src="images/member_an.png" alt="Anh Minh" class="member-photo">
                 <p class="member-name">Cao Anh Minh</p>
                 <p class="member-role">Lớp 4A1</p>
             </div>
             <div class="team-member">
-                <img src="images/member_mai.png" alt="Mai" class="member-photo">
+                <img src="images/phuc.jpg" alt="Minh Phuc" class="member-photo">
                 <p class="member-name">Vũ Minh Phúc</p>
                 <p class="member-role">Lớp 4A1</p>
             </div>
             <div class="team-member">
-                <img src="images/member_minh.png" alt="Minh" class="member-photo">
+                <img src="images/member_minh.png" alt="Hoang Ton" class="member-photo">
                 <p class="member-name">Phạm Vũ Hoàng Tôn</p>
                 <p class="member-role">Lớp 4A1</p>
             </div>
@@ -392,8 +392,8 @@
         <div class="voting-content">
             <img src="images/voting_illustration.png" alt="Voting illustration" class="voting-img">
             <div class="qr-container">
-                <img src="images/qr_code.png" alt="Mã QR" class="qr-code">
-                <p class="qr-text">Quét để bình chọn cho nhóm chúng em <img src="images/heart_icon.png" alt="heart" class="inline-icon"></p>
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&amp;data=https://example.com" alt="Mã QR" class="qr-code">
+                <p class="qr-text">Quét để bình chọn cho nhóm chúng em <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&amp;data=https://example.com" alt="heart" class="inline-icon"></p>
             </div>
         </div>
         <button class="btn btn-blue btn-vote"><img src="images/vote_icon.png" alt="Play icon" class="inline-icon"> Bình Chọn Ngay</button>
