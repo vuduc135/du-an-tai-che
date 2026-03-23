@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dự Án Tái Chế - Nhóm 3 Chiến Binh Xanh</title>
+    <style>
+        /* Trang trí cho website */
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; line-height: 1.6; color: #333; }
+        header { background: #2e7d32; color: white; text-align: center; padding: 2rem 1rem; }
+        .container { max-width: 800px; margin: auto; padding: 20px; }
+        
+        /* Phần giới thiệu nhóm */
+        .team-section { display: flex; justify-content: space-around; flex-wrap: wrap; margin-bottom: 30px; }
+        .member { text-align: center; margin: 10px; }
+        .member img { width: 100px; height: 100px; border-radius: 50%; border: 3px solid #2e7d32; }
+
+        /* Phần hình ảnh và video */
+        .gallery { display: grid; grid-template-columns: 1-fr 1fr; gap: 15px; }
+        video, img { width: 100%; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+
+        /* Phần Vote & QR */
+        .vote-section { background: #f1f8e9; padding: 20px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .qr-code { width: 200px; margin-top: 15px; }
+
+        footer { text-align: center; padding: 20px; background: #333; color: white; margin-top: 40px; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>♻️ Dự Án Tái Chế Rác Thải</h1>
+    <p>Hành động nhỏ - Ý nghĩa lớn cho hành tinh xanh</p>
+</header>
+
+<div class="container">
+    <section>
+        <h2>Chào mừng bạn đến với nhóm chúng mình!</h2>
+        <div class="team-section">
+            <div class="member">
+                <img src="avatar1.jpg" alt="Thành viên 1">
+                <p><strong>Bạn A</strong><br>Trưởng nhóm</p>
+            </div>
+            <div class="member">
+                <img src="avatar2.jpg" alt="Thành viên 2">
+                <p><strong>Bạn B</strong><br>Kỹ thuật</p>
+            </div>
+            <div class="member">
+                <img src="avatar3.jpg" alt="Thành viên 3">
+                <p><strong>Bạn C</strong><br>Sáng tạo</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Hành trình tái chế</h2>
+        <div class="gallery">
+            <img src="anh-lam-viec.jpg" alt="Nhóm đang làm việc">
+            <video controls>
+                <source src="video-du-an.mp4" type="video/mp4">
+                Trình duyệt của bạn không hỗ trợ video.
+            </video>
+        </div>
+    </section>
+
+    <section class="vote-section">
+        <h2>Bình chọn cho chúng mình nhé! 🌟</h2>
+        <p>Quét mã QR bên dưới để tham gia bình chọn cho dự án của nhóm lớp 4 tụi mình.</p>
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=LINK_VOTE_CUA_CON" alt="Mã QR Vote" class="qr-code">
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2026 Nhóm 3 Chiến Binh Xanh - Dự án lớp 4</p>
+</footer>
+
+</body>
+</html>
