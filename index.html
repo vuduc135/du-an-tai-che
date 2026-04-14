@@ -3,48 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nhóm 3 Chiến Binh Xanh - Lớp 4A1</title>
+    <title>Nhóm 3 Chiến Binh Xanh - Dự Án Tái Chế</title>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
     <style>
-        /* --- 1. CHẶN ĐỨNG LỖI VỠ TRANG --- */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html, body {
-            width: 100%;
-            overflow-x: hidden; /* Tuyệt đối không để trang web trượt ngang */
-            background-color: #f0fdf4;
-            font-family: 'Quicksand', sans-serif;
+        /* --- 1. CORE SETUP (CHỐNG VỠ) --- */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html, body { 
+            width: 100%; 
+            overflow-x: hidden; 
+            background-color: #f0fdf4; 
+            font-family: 'Quicksand', sans-serif; 
             color: #1e293b;
+            scroll-behavior: smooth;
         }
 
-        /* --- 2. BANNER FULL MÀN HÌNH (THẬT SỰ) --- */
+        /* --- 2. BANNER FULL MÀN HÌNH --- */
         .full-width-banner {
-            width: 100vw; /* Chiếm trọn 100% chiều rộng màn hình */
-            position: relative;
-            left: 50%;
-            right: 50%;
-            margin-left: -50vw;
-            margin-right: -50vw;
+            width: 100%;
             line-height: 0;
-            background-color: #2e7d32; /* Màu xanh nền cho banner */
+            background-color: #2e7d32;
         }
-
         .full-width-banner img {
             width: 100%;
             height: auto;
             display: block;
-            /* Nếu ảnh của con hơi ngắn, chú dùng object-fit để nó vẫn đẹp */
-            object-fit: cover; 
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
         }
 
-        /* --- 3. KHUNG NỘI DUNG (GIỮ CHO CHỮ KHÔNG BỊ TRÀN) --- */
+        /* --- 3. KHUNG NỘI DUNG CHÍNH --- */
         .main-container {
             width: 95%;
-            max-width: 1100px; /* Khóa chiều rộng nội dung ở giữa Desktop */
+            max-width: 1100px;
             margin: 0 auto;
             padding: 40px 0;
         }
@@ -66,59 +56,110 @@
             font-weight: 700;
         }
 
-        /* --- 4. TEAM GRID (3 CỘT THẲNG HÀNG TRÊN DESKTOP) --- */
-        .team-grid {
+        /* --- 4. MỤC SẢN PHẨM MỚI (6 SẢN PHẨM) --- */
+        .products-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr); 
-            gap: 25px;
+            grid-template-columns: repeat(3, 1fr); /* 3 cột trên máy tính */
+            gap: 20px;
         }
 
-        .member-card {
-            text-align: center;
-            padding: 30px;
+        .product-card {
+            background: #fff;
             border-radius: 20px;
-            background: #f9fafb;
-            border: 2px solid #d1fae5;
+            overflow: hidden;
+            border: 1px solid #d1fae5;
+            text-decoration: none; /* Bỏ gạch chân link */
+            color: inherit;
             transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
 
-        .member-card:hover {
-            transform: translateY(-8px);
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(34, 197, 94, 0.2);
             border-color: #22c55e;
         }
 
-        .member-photo {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid #ffffff;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            margin-bottom: 15px;
+        .product-img-box {
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            overflow: hidden;
+            background: #f1f5f9;
         }
 
-        .member-name { font-size: 1.4rem; font-weight: 700; color: #166534; margin-bottom: 5px; }
-        .member-role { font-size: 1rem; color: #64748b; }
+        .product-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
 
-        /* --- 5. DỰ ÁN GRID --- */
+        .product-card:hover .product-img-box img {
+            transform: scale(1.1);
+        }
+
+        .product-info {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .product-info h3 {
+            font-size: 1.2rem;
+            color: #166534;
+            margin-bottom: 5px;
+        }
+
+        .product-info p {
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        /* --- 5. TEAM & DỰ ÁN GRID --- */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .member-card {
+            text-align: center;
+            padding: 25px;
+            border-radius: 20px;
+            background: #f8fafc;
+            border: 1px solid #d1fae5;
+        }
+        .member-photo {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #fff;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-bottom: 10px;
+        }
+
         .project-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
         }
-        .info-card { padding: 30px; border-radius: 20px; color: white; text-align: center; }
+        .info-card { padding: 25px; border-radius: 20px; color: white; text-align: center; }
         .problem { background: #f97316; }
         .solution { background: #22c55e; }
 
-        /* --- 6. MOBILE RESPONSIVE (CHO ĐIỆN THOẠI) --- */
+        /* --- 6. RESPONSIVE (CHO ĐIỆN THOẠI) --- */
         @media (max-width: 900px) {
+            .products-grid { grid-template-columns: repeat(2, 1fr); } /* 2 cột trên máy tính bảng */
             .team-grid, .project-grid { grid-template-columns: 1fr; }
-            .section-title { font-size: 1.8rem; }
-            .section { padding: 25px; }
-            .member-photo { width: 140px; height: 140px; }
         }
 
-        footer { text-align: center; padding: 50px; color: #94a3b8; }
+        @media (max-width: 600px) {
+            .products-grid { grid-template-columns: 1fr; } /* 1 cột trên điện thoại */
+            .section { padding: 20px; }
+            .section-title { font-size: 1.6rem; }
+        }
+
+        footer { text-align: center; padding: 40px; color: #94a3b8; }
     </style>
 </head>
 <body>
@@ -133,47 +174,64 @@
             <h2 class="section-title">🌿 Đội Ngũ Chiến Binh</h2>
             <div class="team-grid">
                 <div class="member-card">
-                    <img src="images/minh.jpg" alt="Anh Minh" class="member-photo">
-                    <p class="member-name">Cao Anh Minh</p>
-                    <p class="member-role">Lớp 4A1 - TH Nguyễn Viết Xuân</p>
+                    <img src="images/minh.jpg" alt="Minh" class="member-photo">
+                    <p style="font-weight:bold; color:#166534;">Cao Anh Minh</p>
+                    <p style="font-size:0.9rem; color:#64748b;">Lớp 4A1 - TH Nguyễn Viết Xuân</p>
                 </div>
-                
                 <div class="member-card">
-                    <img src="images/phuc.jpg" alt="Minh Phuc" class="member-photo">
-                    <p class="member-name">Vũ Minh Phúc</p>
-                    <p class="member-role">Lớp 4A1 - TH Nguyễn Viết Xuân</p>
+                    <img src="images/phuc.jpg" alt="Phúc" class="member-photo">
+                    <p style="font-weight:bold; color:#166534;">Vũ Minh Phúc</p>
+                    <p style="font-size:0.9rem; color:#64748b;">Lớp 4A1 - TH Nguyễn Viết Xuân</p>
                 </div>
-
                 <div class="member-card">
-                    <img src="images/ton.jpg" alt="Hoang Ton" class="member-photo">
-                    <p class="member-name">Phạm Vũ Hoàng Tôn</p>
-                    <p class="member-role">Lớp 4A1 - TH Nguyễn Viết Xuân</p>
+                    <img src="images/ton.jpg" alt="Tôn" class="member-photo">
+                    <p style="font-weight:bold; color:#166534;">Phạm Vũ Hoàng Tôn</p>
+                    <p style="font-size:0.9rem; color:#64748b;">Lớp 4A1 - TH Nguyễn Viết Xuân</p>
                 </div>
             </div>
         </section>
 
         <section class="section">
-            <h2 class="section-title">♻️ Hành Trình Tái Chế</h2>
-            <div class="project-grid">
-                <div class="info-card problem">
-                    <h3 style="font-size: 1.8rem;">Vấn Đề 🗑️</h3>
-                    <p>Hàng ngàn chai nhựa bị vứt bỏ lãng phí, gây ô nhiễm môi trường xanh.</p>
-                </div>
-                <div class="info-card solution">
-                    <h3 style="font-size: 1.8rem;">Giải Pháp 🪴</h3>
-                    <p>Biến chai nhựa thành chậu cây xinh xắn và đồ chơi sáng tạo để bảo vệ Trái Đất.</p>
-                </div>
+            <h2 class="section-title">🎨 Kho Tàng Sáng Tạo</h2>
+            <div class="products-grid">
+                
+                <a href="den-dai-duong.html" class="product-card">
+                    <div class="product-img-box">
+                        <img src="images/sp1.jpg" alt="Chậu cây">
+                    </div>
+                    <div class="product-info">
+                        <h3>Đèn năng lượng mặt trời đại dương</h3>
+                    </div>
+                </a>
+
+                <a href="den-dau-hong.html" class="product-card">
+                    <div class="product-img-box">
+                        <img src="images/sp2.jpg" alt="Ống đựng bút">
+                    </div>
+                    <div class="product-info">
+                        <h3>Đèn năng lượng mặt trời Dâu hồng</h3>
+                    </div>
+                </a>
+
+                <a href="den-ngoi-nha-xanh.html" class="product-card">
+                    <div class="product-img-box">
+                        <img src="images/sp3.jpg" alt="Xe đồ chơi">
+                    </div>
+                    <div class="product-info">
+                        <h3>Đèn năng lượng mặt trời ngôi nhà xanh</h3>
+                    </div>
+                </a>
             </div>
         </section>
 
         <section class="section" style="text-align: center; background: #eff6ff; border: 3px dashed #3b82f6;">
             <h2 class="section-title">🌟 Bình Chọn Cho Nhóm</h2>
-            <p>Quét mã QR để ủng hộ các "Chiến Binh Xanh" lớp 4A1 nhé!</p>
+            <p>Quét mã QR để ủng hộ các "Chiến Binh Xanh" nhé!</p>
             <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://vuduc135.github.io/du-an-tai-che/" 
-                 style="width: 200px; background: white; padding: 10px; border-radius: 15px; margin: 20px 0;" alt="QR Code">
+                 style="width: 180px; background: white; padding: 10px; border-radius: 15px; margin: 20px 0;" alt="QR Code">
             <br>
             <a href="https://vuduc135.github.io/du-an-tai-che/" 
-               style="background:#2563eb; color:white; padding:18px 40px; border-radius:50px; text-decoration:none; font-weight:bold; display:inline-block;">
+               style="background:#2563eb; color:white; padding:15px 40px; border-radius:50px; text-decoration:none; font-weight:bold; display:inline-block;">
                BÌNH CHỌN NGAY
             </a>
         </section>
